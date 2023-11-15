@@ -31,6 +31,7 @@ Style/ClassAndModuleChildren:
 
 Layout/LineLength:
   Exclude:
+    - 'config/initializers/devise.rb'
     - 'db/migrate/*.rb'
   Max: 120
 
