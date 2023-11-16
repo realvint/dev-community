@@ -3,13 +3,18 @@
     <div class="col-12">
       <h1 class="text-center">Hello! Welcome to the developers community!</h1>
 
-      <div class="card mt-4 mb-4">
+      <div class="card mt-4 mb-4 shadow">
         <div class="card-body">
           <h3 class="text-center mb-3">Search professionals across the world!</h3>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Search by country or city" aria-label="Search by country or city" aria-describedby="button-addon2">
-            <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
-          </div>
+          <%= search_form_for @q, url: root_path do |f| %>
+            <div class="input-group mb-3">
+              <%= f.search_field :city_or_country_cont,
+                                 class: 'form-control',
+                                 placeholder: "Search by country or city",
+                                 aria: { label: 'Search by country or city', describedby: 'button-addon2' } %>
+              <%= f.submit 'Search', class: 'btn btn-primary', id: 'button-addon2' %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @users = User.all.limit(16)
+    @q = User.ransack(params[:q])
+    @users = @q.result.limit(16)
   end
 end

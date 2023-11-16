@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/activerecord-hackery/ransack.git
+  revision: 14495bb111ae69e74368f958671655e84d4b8d3a
+  branch: main
+  specs:
+    ransack (4.1.1)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -331,6 +341,7 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails (~> 7.1.1)
+  ransack!
   redis (>= 4.0.1)
   rspec-rails (~> 6.0, >= 6.0.3)
   rubocop (~> 1.57)

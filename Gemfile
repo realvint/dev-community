@@ -13,6 +13,7 @@ gem 'propshaft'
 
 gem 'devise', '~> 4.9', '>= 4.9.2'
 gem 'dotenv-rails', '2.8.1', require: 'dotenv/rails-now'
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'main'
 gem 'redis', '>= 4.0.1'
 gem 'stimulus-rails'
 gem 'turbo-rails'
