@@ -30,7 +30,7 @@
               <p class="lead mb-1"><%= user.profile_title %></p>
               <small class="text-primary"><%= user.country %></small><br>
               <div class="position-absolute bottom-0 start-50 translate-middle-x">
-                <%= link_to 'View Profile', 'javascript:void(0)', class: 'btn btn-sm btn-primary mt-3' %>
+                <%= link_to 'View Profile', member_path(user), class: 'btn btn-sm btn-primary mt-3' %>
               </div>
             </div>
           </div>
