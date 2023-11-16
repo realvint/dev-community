@@ -1,1 +1,22 @@
-<h1>Hello! Welcome to the developers community!</h1>
+<div class="col-lg-10 mx-auto mt-2">
+  <div class="row mt-4 mb-4">
+    <h1 class="text-center">Hello! Welcome to the developers community!</h1>
+    <% @users.each do |user| %>
+      <div class="col-lg-3 mb-3 mt-3">
+        <div class="card text-center shadow pb-3">
+          <div class="card-body">
+            <%= image_tag 'dummy_user.jpg', style: 'width: 150px; border-radius: 50%; border: 2px solid #0d6efd;', class: 'mb-3' %>
+            <div class="user-info position-relative" style="min-height: 180px">
+              <h5><%= user.name %></h5>
+              <p class="lead mb-1"><%= user.profile_title %></p>
+              <small class="text-primary"><%= user.country %></small><br>
+              <div class="position-absolute bottom-0 start-50 translate-middle-x">
+                <%= link_to 'View Profile', 'javascript:void(0)', class: 'btn btn-sm btn-primary mt-3' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

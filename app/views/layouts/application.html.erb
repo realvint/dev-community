@@ -15,8 +15,9 @@
     <div class="container-fluid">
       <%= notice if notice %>
       <%= alert if alert %>
-
-      <%= yield %>
+      <div class="row">
+        <%= yield %>
+      </div>
     </div>
     <%= render 'shared/footer' %>
   </body>
