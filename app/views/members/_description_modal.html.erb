@@ -1,28 +1,16 @@
-<%= turbo_frame_tag :modal, target: :_top do %>
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controller="modal">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit your profile description</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<%= form_with model: current_user, url: update_member_description_path, method: :put do |f| %>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="form-group">
+          <%= f.label :about, 'Edit your description here', class: 'form-label' %>
+          <%= f.text_area :about, class: 'form-control', rows: 10 %>
         </div>
-        <%= form_with model: current_user, url: update_member_description_path, method: :put do |f| %>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="form-group">
-                  <%= f.label :about, 'Edit your description here', class: 'form-label' %>
-                  <%= f.text_area :about, class: 'form-control', rows: 10 %>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <%= f.submit 'Save Changes', data: { action: 'click->modal#submitEnd' }, class: 'btn btn-primary' %>
-          </div>
-        <% end %>
       </div>
     </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <%= f.submit 'Save Changes', data: { action: 'click->modal#submitEnd' }, class: 'btn btn-primary' %>
   </div>
 <% end %>

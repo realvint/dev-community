@@ -4,11 +4,8 @@
 
 import { application } from "./application"
 
-import EditUserDescriptionController from "./edit_user_description_controller"
-application.register("edit-user-description", EditUserDescriptionController)
-
-import EditUserDetailsController from "./edit_user_details_controller"
-application.register("edit-user-details", EditUserDetailsController)
+import BsModalFormController from "./bs_modal_form_controller"
+application.register("bs-modal-form", BsModalFormController)
 
 import ModalController from "./modal_controller"
 application.register("modal", ModalController)
