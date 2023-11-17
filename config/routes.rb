@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :members, only: :show
 
-  get 'edit_description/:id', to: 'members#edit_description', as: 'edit_member_description'
+  get 'edit_description', to: 'members#edit_description', as: 'edit_member_description'
 
-  put 'update_description/:id', to: 'members#update_description', as: 'update_member_description'
+  put 'update_description', to: 'members#update_description', as: 'update_member_description'
 end
