@@ -23,10 +23,14 @@
           </div>
         </div>
         <div class="col-lg-6">
-          <div class="d-flex justify-content-end"></div>
+          <div class="d-flex justify-content-end">
+            <%= link_to edit_member_description_path(@user), data: { controller: 'edit-user-description' } do %>
+              <i class="bi bi-pencil-fill"></i>
+            <% end %>
+          </div>
         </div>
       </div>
-      <p class="lead"><%= @user.about %></p>
+      <%= render 'member_description', user: @user %>
     </div>
   </div>
 </div>

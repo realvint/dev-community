@@ -17,6 +17,7 @@
       <%= alert if alert %>
       <div class="row">
         <%= yield %>
+        <%= turbo_frame_tag 'modal' %>
       </div>
     </div>
     <%= render 'shared/footer' %>
