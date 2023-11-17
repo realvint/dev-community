@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :members, only: :show
 
   get 'edit_description', to: 'members#edit_description', as: 'edit_member_description'
+  get 'edit_personal_details', to: 'members#edit_personal_details', as: 'edit_member_personal_details'
 
   put 'update_description', to: 'members#update_description', as: 'update_member_description'
+  put 'update_personal_details', to: 'members#update_personal_details', as: 'update_member_personal_details'
 end
