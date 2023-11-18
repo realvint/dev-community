@@ -22,4 +22,26 @@
       <%= render 'member_description', user: @user %>
     </div>
   </div>
+
+  <div class="card mb-5">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="f-flex justify-content-start">
+            <h3>Work Experiences</h3>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <% if user_signed_in? && @user == current_user %>
+            <div class="d-flex justify-content-end">
+              <%= link_to new_work_experience_path, data: { controller: 'bs-modal-form' } do %>
+                <i class="bi bi-plus"></i> Add experience
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>

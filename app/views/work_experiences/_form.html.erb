@@ -1,0 +1,74 @@
+<%= form_with model: @work_experience do |f| %>
+  <div class="modal-body">
+    <div class="row">
+      <% if @work_experience.errors.any? %>
+        <div class="error-area" style="color: red">
+          <h3>
+            <%= pluralize(@work_experience.errors.count, 'error') %> prohibited your work experience from being saved.
+          </h3>
+          <ul>
+            <% @work_experience.errors.each do |e| %>
+              <li><%= e.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="col-lg-12">
+        <div class="form-group mb-3">
+          <%= f.label :job_title, 'Title', class: 'form-label' %>
+          <%= f.text_field :job_title, class: 'form-control' %>
+        </div>
+
+        <div class="form-group mb-3">
+          <%= f.label :company, class: 'form-label' %>
+          <%= f.text_field :company, class: 'form-control' %>
+        </div>
+
+        <div class="form-group mb-3">
+          <%= f.label :employment_type, class: 'form-label' %>
+          <%= f.select :employment_type, options_for_select(WorkExperience::EMPLOYMENT_TYPE), { prompt: 'Select employment type' }, { class: 'form-select' } %>
+        </div>
+
+        <div class="form-group mb-3">
+          <%= f.label :location, class: 'form-label' %>
+          <%= f.text_field :location, class: 'form-control' %>
+        </div>
+
+        <div class="form-group mb-3">
+          <%= f.label :location_type, class: 'form-label' %>
+          <%= f.select :location_type, options_for_select(WorkExperience::LOCATION_TYPE), { prompt: 'Select location type' }, { class: 'form-select' } %>
+        </div>
+
+        <div class="form-group row mb-3">
+          <div class="col-lg-6">
+            <%= f.label :start_date, class: 'form-label' %>
+            <span class="text-danger">*</span>
+            <%= f.date_field :start_date, class: 'form-control' %>
+          </div>
+          <div class="col-lg-6">
+            <%= f.label :end_date, class: 'form-label' %>
+            <%= f.date_field :end_date, class: 'form-control' %>
+          </div>
+        </div>
+
+        <div class="form-group mb-3">
+          <div class="form-check form-switch">
+            <%= f.check_box :currently_working_here, class: 'form-check-input', role: 'switch' %>
+            <label for="currently_working_here" class="form-check-label">I am currently working here</label>
+          </div>
+        </div>
+
+        <div class="form-group mb-3">
+          <%= f.label :description, class: 'form-label' %>
+          <%= f.text_area :description, rows: 5, class: 'form-control' %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <%= f.submit 'Save Changes', data: { action: 'click->modal#submitEnd' }, class: 'btn btn-primary' %>
+  </div>
+<% end %>
