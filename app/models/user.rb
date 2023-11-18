@@ -14,6 +14,8 @@ class User < ApplicationRecord
     'Senior Front End Developer'
   ].freeze
 
+  has_many :work_experiences, dependent: :destroy
+
   def name
     "#{first_name} #{last_name}".strip
   end
