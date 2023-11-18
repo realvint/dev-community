@@ -10,6 +10,9 @@
         <%= link_to edit_work_experience_path(work_experience), data: { turbo_frame: 'modal' } do %>
           <i class="bi bi-pencil-fill"></i>
         <% end %>
+        <%= link_to work_experience, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+          <i class="bi bi-trash-fill ms-3 text-danger"></i>
+        <% end %>
       </div>
     </div>
   </div>

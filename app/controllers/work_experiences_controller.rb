@@ -27,7 +27,13 @@ class WorkExperiencesController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+    @work_experience.destroy
+
+    respond_to do |format|
+      format.turbo_stream { render turbo_stream: turbo_stream.remove("work-experience-item-#{@work_experience.id}") }
+    end
+  end
 
   private
 
