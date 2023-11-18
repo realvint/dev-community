@@ -41,7 +41,15 @@
           <% end %>
         </div>
       </div>
-
+      <ul class="list-group" id="work-experience-items">
+        <% if @user.work_experiences.present? %>
+          <% @user.work_experiences.each do |work_experience| %>
+            <%= render 'work_experiences/work_experience', work_experience: work_experience %>
+          <% end %>
+        <% else %>
+         <c class="list-group-item">Not present</c>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
