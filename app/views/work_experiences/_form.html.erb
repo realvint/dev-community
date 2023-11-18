@@ -1,41 +1,35 @@
 <%= form_with model: work_experience do |f| %>
   <div class="modal-body">
-    <% if work_experience.errors.any? %>
-      <div class="alert alert-danger">
-        <h5>
-          <%= pluralize(work_experience.errors.count, 'error') %> prohibited your work experience from being saved.
-        </h5>
-        <ul>
-          <% work_experience.errors.each do |e| %>
-            <li><%= e.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <%= render 'shared/errors', resource: work_experience %>
     <div class="row">
       <div class="col-lg-12">
         <div class="form-group mb-3">
           <%= f.label :job_title, 'Title', class: 'form-label' %>
+          <span class="text-danger">*</span>
           <%= f.text_field :job_title, class: 'form-control' %>
         </div>
 
         <div class="form-group mb-3">
           <%= f.label :company, class: 'form-label' %>
+          <span class="text-danger">*</span>
           <%= f.text_field :company, class: 'form-control' %>
         </div>
 
         <div class="form-group mb-3">
           <%= f.label :employment_type, class: 'form-label' %>
+          <span class="text-danger">*</span>
           <%= f.select :employment_type, options_for_select(WorkExperience::EMPLOYMENT_TYPE), { prompt: 'Select employment type' }, { class: 'form-select' } %>
         </div>
 
         <div class="form-group mb-3">
           <%= f.label :location, class: 'form-label' %>
+          <span class="text-danger">*</span>
           <%= f.text_field :location, class: 'form-control' %>
         </div>
 
         <div class="form-group mb-3">
           <%= f.label :location_type, class: 'form-label' %>
+          <span class="text-danger">*</span>
           <%= f.select :location_type, options_for_select(WorkExperience::LOCATION_TYPE), { prompt: 'Select location type' }, { class: 'form-select' } %>
         </div>
 
