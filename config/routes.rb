@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :members, only: :show
+  resources :work_experiences
 
   get 'edit_description', to: 'members#edit_description', as: 'edit_member_description'
   get 'edit_personal_details', to: 'members#edit_personal_details', as: 'edit_member_personal_details'
