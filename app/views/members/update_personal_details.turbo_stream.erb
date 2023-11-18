@@ -1,0 +1,4 @@
+<%= turbo_stream.update(:modal, nil) %>
+<%= turbo_stream.replace('member-personal-details',
+                         partial: 'members/member_personal_details',
+                         locals: { user: current_user }) %>

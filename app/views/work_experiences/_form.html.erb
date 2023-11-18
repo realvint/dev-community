@@ -1,13 +1,13 @@
-<%= form_with model: @work_experience do |f| %>
+<%= form_with model: work_experience do |f| %>
   <div class="modal-body">
     <div class="row">
-      <% if @work_experience.errors.any? %>
+      <% if work_experience.errors.any? %>
         <div class="error-area" style="color: red">
           <h3>
-            <%= pluralize(@work_experience.errors.count, 'error') %> prohibited your work experience from being saved.
+            <%= pluralize(work_experience.errors.count, 'error') %> prohibited your work experience from being saved.
           </h3>
           <ul>
-            <% @work_experience.errors.each do |e| %>
+            <% work_experience.errors.each do |e| %>
               <li><%= e.full_message %></li>
             <% end %>
           </ul>
@@ -69,6 +69,6 @@
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <%= f.submit 'Save Changes', data: { action: 'click->modal#submitEnd' }, class: 'btn btn-primary' %>
+    <%= f.submit 'Save Changes', class: 'btn btn-primary' %>
   </div>
 <% end %>

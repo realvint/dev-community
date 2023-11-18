@@ -12,7 +12,7 @@
         <div class="col-lg-6">
           <% if user_signed_in? && @user == current_user %>
             <div class="d-flex justify-content-end">
-              <%= link_to edit_member_description_path, data: { controller: 'bs-modal-form' } do %>
+              <%= link_to edit_member_description_path, data: { turbo_frame: 'modal' } do %>
                 <i class="bi bi-pencil-fill"></i>
               <% end %>
             </div>
@@ -34,7 +34,7 @@
         <div class="col-lg-6">
           <% if user_signed_in? && @user == current_user %>
             <div class="d-flex justify-content-end">
-              <%= link_to new_work_experience_path, data: { controller: 'bs-modal-form' } do %>
+              <%= link_to new_work_experience_path, data: { turbo_frame: 'modal' } do %>
                 <i class="bi bi-plus"></i> Add experience
               <% end %>
             </div>
@@ -46,8 +46,6 @@
           <% @user.work_experiences.each do |work_experience| %>
             <%= render 'work_experiences/work_experience', work_experience: work_experience %>
           <% end %>
-        <% else %>
-         <c class="list-group-item">Not present</c>
         <% end %>
       </ul>
     </div>

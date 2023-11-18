@@ -8,28 +8,20 @@ class MembersController < ApplicationController
   def edit_description; end
 
   def update_description
+    current_user.update(about: params[:user][:about])
+
     respond_to do |format|
-      if current_user.update(about: params[:user][:about])
-        format.turbo_stream do
-          render turbo_stream: turbo_stream.replace('member-description',
-                                                    partial: 'members/member_description',
-                                                    locals: { user: current_user })
-        end
-      end
+      format.turbo_stream
     end
   end
 
   def edit_personal_details; end
 
   def update_personal_details
+    current_user.update(user_personal_info_params)
+
     respond_to do |format|
-      if current_user.update(user_personal_info_params)
-        format.turbo_stream do
-          render turbo_stream: turbo_stream.replace('member-personal-details',
-                                                    partial: 'members/member_personal_details',
-                                                    locals: { user: current_user })
-        end
-      end
+      format.turbo_stream
     end
   end
 

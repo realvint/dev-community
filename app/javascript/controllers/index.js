@@ -4,8 +4,5 @@
 
 import { application } from "./application"
 
-import BsModalFormController from "./bs_modal_form_controller"
-application.register("bs-modal-form", BsModalFormController)
-
 import ModalController from "./modal_controller"
 application.register("modal", ModalController)

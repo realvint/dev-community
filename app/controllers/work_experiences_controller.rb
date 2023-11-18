@@ -10,21 +10,10 @@ class WorkExperiencesController < ApplicationController
 
   def create
     @work_experience = current_user.work_experiences.new(work_experience_params)
+    @work_experience.save
+
     respond_to do |format|
-      if @work_experience.save
-        format.turbo_stream do
-          render turbo_stream: turbo_stream.append('work-experience-items',
-                                                   partial: 'work_experiences/work_experience',
-                                                   locals: { work_experience: @work_experience })
-        end
-      else
-        format.turbo_stream do
-          render turbo_stream: turbo_stream.replace('modal',
-                                                    partial: 'shared/turbo_modal',
-                                                    locals: { modal_title: 'Add your work experience',
-                                                              form_partial: 'work_experiences/form' })
-        end
-      end
+      format.turbo_stream
     end
   end
 
@@ -42,7 +31,7 @@ class WorkExperiencesController < ApplicationController
 
   def work_experience_params
     params.require(:work_experience).permit(:start_date,
-                                            :last_date,
+                                            :end_date,
                                             :currently_working_here,
                                             :company,
                                             :employment_type,
