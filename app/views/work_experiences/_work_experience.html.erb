@@ -1,11 +1,11 @@
 <li class="list-group-item" id="work-experience-item-<%= work_experience.id %>">
   <div class="row">
-    <div class="col-lg-9">
+    <div class="col">
       <div class="d-flex justify-content-start">
         <p class="fw-bold"><%= work_experience.job_title %></p>
       </div>
     </div>
-    <div class="col-lg-3">
+    <div class="col">
       <div class="d-flex justify-content-end">
         <%= link_to edit_work_experience_path(work_experience), data: { turbo_frame: 'modal' } do %>
           <i class="bi bi-pencil-fill"></i>

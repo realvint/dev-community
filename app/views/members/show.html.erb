@@ -4,12 +4,12 @@
   <div class="card mb-5">
     <div class="card-body">
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-auto">
           <div class="f-flex justify-content-start">
             <h3>About</h3>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col">
           <% if user_signed_in? && @user == current_user %>
             <div class="d-flex justify-content-end">
               <%= link_to edit_member_description_path, data: { turbo_frame: 'modal' } do %>
@@ -26,12 +26,12 @@
   <div class="card mb-5">
     <div class="card-body">
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col">
           <div class="f-flex justify-content-start">
             <h3>Work Experiences</h3>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col">
           <% if user_signed_in? && @user == current_user %>
             <div class="d-flex justify-content-end">
               <%= link_to new_work_experience_path, data: { turbo_frame: 'modal' } do %>
