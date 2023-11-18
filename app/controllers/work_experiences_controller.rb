@@ -19,7 +19,13 @@ class WorkExperiencesController < ApplicationController
 
   def edit; end
 
-  def update; end
+  def update
+    @work_experience.update(work_experience_params)
+
+    respond_to do |format|
+      format.turbo_stream
+    end
+  end
 
   def destroy; end
 

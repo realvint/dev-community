@@ -1,0 +1,10 @@
+<% if @work_experience.errors.any? %>
+  <%= turbo_stream.update ('turbo-modal-body'),
+                          partial: 'work_experiences/form',
+                          locals: { work_experience: @work_experience } %>
+<% else %>
+  <%= turbo_stream.update(:modal, nil) %>
+  <%= turbo_stream.replace("work-experience-item-#{@work_experience.id}",
+                          partial: 'work_experiences/work_experience',
+                          locals: { work_experience: @work_experience }) %>
+<% end %>

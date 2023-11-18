@@ -18,7 +18,7 @@
         <div class="form-group mb-3">
           <%= f.label :employment_type, class: 'form-label' %>
           <span class="text-danger">*</span>
-          <%= f.select :employment_type, options_for_select(WorkExperience::EMPLOYMENT_TYPE), { prompt: 'Select employment type' }, { class: 'form-select' } %>
+          <%= f.select :employment_type, options_for_select(WorkExperience::EMPLOYMENT_TYPE, selected: f.object.employment_type), { prompt: 'Select employment type' }, { class: 'form-select' } %>
         </div>
 
         <div class="form-group mb-3">
@@ -30,7 +30,7 @@
         <div class="form-group mb-3">
           <%= f.label :location_type, class: 'form-label' %>
           <span class="text-danger">*</span>
-          <%= f.select :location_type, options_for_select(WorkExperience::LOCATION_TYPE), { prompt: 'Select location type' }, { class: 'form-select' } %>
+          <%= f.select :location_type, options_for_select(WorkExperience::LOCATION_TYPE, selected: f.object.location_type), { prompt: 'Select location type' }, { class: 'form-select' } %>
         </div>
 
         <div class="form-group row mb-3">
