@@ -8,8 +8,12 @@ export default class extends Controller {
 
     this.element.addEventListener('hidden.bs.modal', (event) => {
       const modal_frame = document.querySelector('#modal')
-      if (modal_frame) modal_frame.src = '' // Otherwise the frame actually remains active!
-    })
+
+      if (modal_frame) {
+        modal_frame.src = ''
+        modal_frame.innerHTML = ''
+      }
+    }) // Otherwise the frame actually remains active!
   }
 
   disconnect() {
