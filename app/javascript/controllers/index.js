@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import DisableEndDateController from "./disable_end_date_controller"
+application.register("disable-end-date", DisableEndDateController)
+
 import ModalController from "./modal_controller"
 application.register("modal", ModalController)
