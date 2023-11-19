@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import ConnectionsController from "./connections_controller"
+application.register("connections", ConnectionsController)
+
 import DisableEndDateController from "./disable_end_date_controller"
 application.register("disable-end-date", DisableEndDateController)
 

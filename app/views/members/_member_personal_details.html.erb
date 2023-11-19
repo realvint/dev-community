@@ -24,7 +24,13 @@
 
         <div id="user-connection-status">
           <% if user_signed_in? && current_user.check_if_already_connected?(current_user, user) %>
-            <%= link_to 'Connect', connections_path, class: 'btn btn-primary' %>
+            <%= link_to 'Connect', connections_path, class: 'btn btn-primary',
+                        data: { controller: 'connections',
+                                turbo_method: :post,
+                                connections_target: 'connection',
+                                requester_id: current_user.id,
+                                connected_id: user.id }
+            %>
           <% end %>
         </div>
       </div>
